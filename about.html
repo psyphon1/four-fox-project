@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Four Fox Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{sapphire:{DEFAULT:'#233E84',dark:'#0D2767'},bloom:'#DA5D7E',cream:'#FFEFD1',gold:'#D2A588'}}}}</script>
+    <style>
+        body { cursor: none; overflow-x: hidden; }
+        .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
+        .cursor-dot { width: 8px; height: 8px; background: #DA5D7E; }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(218, 93, 126, 0.5); transition: 0.15s ease-out; }
+        #neural-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.3; pointer-events: none; }
+        .tilt-card { transform-style: preserve-3d; transform: perspective(1000px); }
+        .tilt-content { transform: translateZ(20px); }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+    <div class="cursor-dot"></div><div class="cursor-outline"></div><canvas id="neural-canvas"></canvas>
+
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 magnetic-btn"><img src="logo.png" alt="Logo" class="h-12 w-auto"></a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">Home</a>
+                    <a href="about.html" class="text-sapphire font-bold border-b-2 border-sapphire magnetic-btn">About</a>
+                    <a href="whatsapp.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">WhatsApp AI</a>
+                    <a href="calling.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">AI Calling</a>
+                    <a href="get-started.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">Get Started</a>
+                </div>
+                <div><a href="get-started.html" class="magnetic-btn bg-bloom hover:bg-bloom-hover text-white px-8 py-3 rounded-lg font-bold transition shadow-lg">Book Audit</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 bg-sapphire-dark text-white relative">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6">We Don't Sell Tools.<br><span class="text-gold">We Engineer Machines.</span></h1>
+            <p class="text-xl text-blue-100">Four Fox Technologies is an AI-powered business automation and intelligent systems company based in Pune, Maharashtra.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg prose-indigo mx-auto text-slate-600">
+                <p class="mb-6 leading-relaxed">
+                    We design and deploy smart digital systems that automate business operations, capture leads 24×7, handle customer communication, and increase revenue while reducing manual work and staff dependency.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 my-12">
+                    <div class="bg-cream p-8 rounded-2xl border-l-4 border-bloom shadow-lg js-tilt tilt-card">
+                        <h3 class="text-xl font-bold text-sapphire-dark mb-2 tilt-content">Our Mission</h3>
+                        <p class="italic tilt-content text-sm">To bring enterprise-level AI automation to Indian MSMEs — clinics, shops, offices, real estate firms, factories — at an affordable cost.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border-l-4 border-sapphire shadow-lg js-tilt tilt-card">
+                        <h3 class="text-xl font-bold text-sapphire-dark mb-2 tilt-content">Brand Promise</h3>
+                        <p class="italic tilt-content text-sm">We design intelligent digital business machines that work 24×7, reduce your workload, and multiply your profit.</p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-sapphire-dark mt-10 mb-4">Why Pune?</h3>
+                <p class="mb-4">
+                    Based in the education and IT capital of India, we combine local business understanding with global technical standards. We provide on-ground support to businesses in Maharashtra while serving clients internationally.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-gray-200 relative z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-sapphire-dark text-center mb-16">Our Approach to Delivering Impact</h2>
+            <div class="grid md:grid-cols-5 gap-4">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 js-tilt tilt-card text-center"><div class="w-12 h-12 bg-sapphire text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl tilt-content">1</div><h4 class="font-bold text-sm mb-2 tilt-content">Understand</h4><p class="text-xs text-slate-500 tilt-content">Analyze goals & audience.</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 js-tilt tilt-card text-center"><div class="w-12 h-12 bg-bloom text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl tilt-content">2</div><h4 class="font-bold text-sm mb-2 tilt-content">Define</h4><p class="text-xs text-slate-500 tilt-content">Data-backed action plans.</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 js-tilt tilt-card text-center"><div class="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl tilt-content">3</div><h4 class="font-bold text-sm mb-2 tilt-content">Design</h4><p class="text-xs text-slate-500 tilt-content">Tailored digital solutions.</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 js-tilt tilt-card text-center"><div class="w-12 h-12 bg-sapphire-dark text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl tilt-content">4</div><h4 class="font-bold text-sm mb-2 tilt-content">Automate</h4><p class="text-xs text-slate-500 tilt-content">Refine for performance.</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 js-tilt tilt-card text-center"><div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl tilt-content">5</div><h4 class="font-bold text-sm mb-2 tilt-content">Monitor</h4><p class="text-xs text-slate-500 tilt-content">Adapt & expand success.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-sapphire-dark text-slate-300 py-16 border-t border-white/10 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+            <div>
+                <img src="logo.png" alt="Four Fox Logo" class="h-12 mb-4 opacity-90">
+                <p class="text-sm leading-relaxed text-blue-100">
+                    Four Fox Technologies is an AI Systems Engineering Company based in Pune. We build digital machines that run your business on autopilot.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-bloom magnetic-btn inline-block">Home</a></li>
+                    <li><a href="about.html" class="hover:text-bloom magnetic-btn inline-block">About Us</a></li>
+                    <li><a href="get-started.html" class="hover:text-bloom magnetic-btn inline-block">Book Audit</a></li>
+                    <li><a href="terms.html" class="hover:text-bloom magnetic-btn inline-block">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="whatsapp.html" class="hover:text-bloom magnetic-btn inline-block">WhatsApp AI</a></li>
+                    <li><a href="calling.html" class="hover:text-bloom magnetic-btn inline-block">AI Calling</a></li>
+                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">Websites</a></li>
+                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">RAG Systems</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="tel:+919511830971" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-phone text-gold text-lg"></i> +91 95118 30971</a></li>
+                    <li><a href="https://wa.me/918010362102" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fab fa-whatsapp text-gold text-lg"></i> +91 80103 62102</a></li>
+                    <li><a href="mailto:chinmayd1424@gmail.com" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-envelope text-gold text-lg"></i> chinmayd1424@gmail.com</a></li>
+                    <li class="flex gap-3 items-center"><i class="fas fa-map-marker-alt text-gold text-lg"></i> <a href="https://maps.google.com/?q=Four+Fox+Technologies+Pune" target="_blank" class="hover:text-bloom">Pune, Maharashtra, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-xs text-slate-500">
+            © 2025 Four Fox Technologies. All rights reserved. <a href="terms.html" class="hover:text-white underline ml-2">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <script>
+        const cursorDot=document.querySelector('.cursor-dot'),cursorOutline=document.querySelector('.cursor-outline');window.addEventListener("mousemove",e=>{const t=e.clientX,n=e.clientY;cursorDot.style.left=`${t}px`,cursorDot.style.top=`${n}px`,cursorOutline.animate({left:`${t}px`,top:`${n}px`},{duration:500,fill:"forwards"})});
+        document.querySelectorAll('.magnetic-btn').forEach(e=>{e.addEventListener('mousemove',t=>{const n=e.getBoundingClientRect(),o=t.clientX-n.left-n.width/2,r=t.clientY-n.top-n.height/2;e.style.transform=`translate(${o*0.2}px, ${r*0.2}px)`}),e.addEventListener('mouseleave',()=>{e.style.transform='translate(0px, 0px)'})});
+        document.querySelectorAll('.js-tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,cX=r.width/2,cY=r.height/2,rX=((y-cY)/cY)*-10,rY=((x-cX)/cX)*10;c.style.transform=`perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale(1.02)`});c.addEventListener('mouseleave',()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale(1)`})});
+        const cvs=document.getElementById('neural-canvas'),ctx=cvs.getContext('2d');let w,h,pts=[];function rsz(){w=cvs.width=innerWidth,h=cvs.height=innerHeight}window.addEventListener('resize',rsz),rsz();class Pt{constructor(){this.x=Math.random()*w,this.y=Math.random()*h,this.vx=(Math.random()-.5)*.5,this.vy=(Math.random()-.5)*.5,this.s=Math.random()*2+1}up(){this.x+=this.vx,this.y+=this.vy;(this.x<0||this.x>w)&&(this.vx*=-1);(this.y<0||this.y>h)&&(this.vy*=-1)}dr(){ctx.beginPath(),ctx.arc(this.x,this.y,this.s,0,Math.PI*2),ctx.fillStyle='#233E84',ctx.fill()}}for(let i=0;i<50;i++)pts.push(new Pt);function anim(){ctx.clearRect(0,0,w,h);pts.forEach((p,i)=>{p.up();p.dr();for(let j=i;j<pts.length;j++){const dx=p.x-pts[j].x,dy=p.y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){ctx.beginPath(),ctx.strokeStyle=`rgba(35,62,132,${1-d/150})`,ctx.lineWidth=.5,ctx.moveTo(p.x,p.y),ctx.lineTo(pts[j].x,pts[j].y),ctx.stroke()}}});requestAnimationFrame(anim)}anim();
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Started | Four Fox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{sapphire:{DEFAULT:'#233E84',dark:'#0D2767'},bloom:'#DA5D7E',gold:'#D2A588',cream:'#FFEFD1'}}}}</script>
+    <style>body{cursor:none} .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
+        .cursor-dot { width: 8px; height: 8px; background: #DA5D7E; }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(218, 93, 126, 0.5); transition: 0.15s ease-out; }
+        #neural-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:.3}.tilt-card{transform-style:preserve-3d;transform:perspective(1000px)}.tilt-content{transform:translateZ(20px)}</style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-sapphire-dark min-h-screen">
+    <div class="cursor-dot"></div><div class="cursor-outline"></div><canvas id="neural-canvas"></canvas>
+
+    <nav class="bg-white border-b border-gray-100 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 magnetic-btn"><img src="logo.png" alt="Logo" class="h-12 w-auto"></a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">About</a>
+                    <a href="whatsapp.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">WhatsApp AI</a>
+                    <a href="calling.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">AI Calling</a>
+                    <a href="get-started.html" class="text-sapphire font-bold border-b-2 border-sapphire magnetic-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 pt-40 pb-20 relative z-10">
+        <div class="text-center mb-16"><h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Connect With Our Engineering Team</h1><p class="text-blue-100 text-xl font-light">Direct access to AI specialists serving clients in the UK & India.</p></div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+            <a href="tel:+919511830971" target="_blank" class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition flex flex-col items-center text-center magnetic-btn js-tilt tilt-card"><div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-4xl mb-6 tilt-content"><i class="fas fa-phone-alt"></i></div><h3 class="text-2xl font-bold text-sapphire-dark mb-2 tilt-content">Call</h3><span class="text-xl font-bold text-bloom tilt-content">+91 95118 30971</span></a>
+            <a href="https://wa.me/918010362102" target="_blank" class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition flex flex-col items-center text-center magnetic-btn js-tilt tilt-card"><div class="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center text-4xl mb-6 tilt-content"><i class="fab fa-whatsapp"></i></div><h3 class="text-2xl font-bold text-sapphire-dark mb-2 tilt-content">WhatsApp</h3><span class="text-xl font-bold text-bloom tilt-content">+91 80103 62102</span></a>
+            <a href="mailto:chinmayd1424@gmail.com" target="_blank" class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition flex flex-col items-center text-center magnetic-btn js-tilt tilt-card"><div class="w-20 h-20 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-4xl mb-6 tilt-content"><i class="fas fa-envelope"></i></div><h3 class="text-2xl font-bold text-sapphire-dark mb-2 tilt-content">Email</h3><span class="text-sm font-bold text-bloom tilt-content">chinmayd1424@gmail.com</span></a>
+        </div>
+
+        <div id="scenarios" class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-10 mb-16">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">Real World Scenarios</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 p-6 rounded-xl border border-white/10 js-tilt tilt-card"><h3 class="font-bold text-gold mb-2 tilt-content">Clinic at 9 PM</h3><p class="text-blue-100 text-sm tilt-content">Patient calls. AI answers, checks slots, books appt.</p></div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/10 js-tilt tilt-card"><h3 class="font-bold text-gold mb-2 tilt-content">Facebook Ads</h3><p class="text-blue-100 text-sm tilt-content">50 leads instantly contacted & qualified via WhatsApp.</p></div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/10 js-tilt tilt-card"><h3 class="font-bold text-gold mb-2 tilt-content">Shops/Retail</h3><p class="text-blue-100 text-sm tilt-content">Customer asks "Is this available?". AI checks stock & replies.</p></div>
+                <div class="bg-white/10 p-6 rounded-xl border border-white/10 js-tilt tilt-card"><h3 class="font-bold text-gold mb-2 tilt-content">Factory</h3><p class="text-blue-100 text-sm tilt-content">Vendor asks for PO status. AI checks ERP and updates instantly.</p></div>
+            </div>
+        </div>
+
+        <div class="bg-cream rounded-3xl p-10 shadow-xl">
+            <h2 class="text-2xl font-bold text-sapphire-dark mb-8 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"><h4 class="font-bold text-sapphire-dark">How long does setup take?</h4><p class="text-sm text-slate-600 mt-2">Core systems live in 48-72 hours.</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"><h4 class="font-bold text-sapphire-dark">Do I need technical knowledge?</h4><p class="text-sm text-slate-600 mt-2">Zero. We handle all engineering, deployment, and maintenance.</p></div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"><h4 class="font-bold text-sapphire-dark">Is my data secure?</h4><p class="text-sm text-slate-600 mt-2">Yes. We use enterprise-grade encryption and Private Vector Databases.</p></div>
+            </div>
+        </div>
+    </div>
+
+ <footer class="bg-sapphire-dark text-slate-300 py-16 border-t border-white/10 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+            <div>
+                <img src="logo.png" alt="Four Fox Logo" class="h-12 mb-4 opacity-90">
+                <p class="text-sm leading-relaxed text-blue-100">
+                    Four Fox Technologies is an AI Systems Engineering Company based in Pune. We build digital machines that run your business on autopilot.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-bloom magnetic-btn inline-block">Home</a></li>
+                    <li><a href="about.html" class="hover:text-bloom magnetic-btn inline-block">About Us</a></li>
+                    <li><a href="get-started.html" class="hover:text-bloom magnetic-btn inline-block">Book Audit</a></li>
+                    <li><a href="terms.html" class="hover:text-bloom magnetic-btn inline-block">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="whatsapp.html" class="hover:text-bloom magnetic-btn inline-block">WhatsApp AI</a></li>
+                    <li><a href="calling.html" class="hover:text-bloom magnetic-btn inline-block">AI Calling</a></li>
+                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">Websites</a></li>
+                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">RAG Systems</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="tel:+919511830971" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-phone text-gold text-lg"></i> +91 95118 30971</a></li>
+                    <li><a href="https://wa.me/918010362102" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fab fa-whatsapp text-gold text-lg"></i> +91 80103 62102</a></li>
+                    <li><a href="mailto:chinmayd1424@gmail.com" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-envelope text-gold text-lg"></i> chinmayd1424@gmail.com</a></li>
+                    <li class="flex gap-3 items-center"><i class="fas fa-map-marker-alt text-gold text-lg"></i> <a href="https://maps.google.com/?q=Four+Fox+Technologies+Pune" target="_blank" class="hover:text-bloom">Pune, Maharashtra, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-xs text-slate-500">
+            © 2025 Four Fox Technologies. All rights reserved. <a href="terms.html" class="hover:text-white underline ml-2">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <script>const cursorDot=document.querySelector('.cursor-dot'),cursorOutline=document.querySelector('.cursor-outline');window.addEventListener("mousemove",e=>{const t=e.clientX,n=e.clientY;cursorDot.style.left=`${t}px`,cursorDot.style.top=`${n}px`,cursorOutline.animate({left:`${t}px`,top:`${n}px`},{duration:500,fill:"forwards"})});document.querySelectorAll('.magnetic-btn').forEach(e=>{e.addEventListener('mousemove',t=>{const n=e.getBoundingClientRect(),o=t.clientX-n.left-n.width/2,r=t.clientY-n.top-n.height/2;e.style.transform=`translate(${o*0.2}px, ${r*0.2}px)`}),e.addEventListener('mouseleave',()=>{e.style.transform='translate(0px, 0px)'})});document.querySelectorAll('.js-tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,cX=r.width/2,cY=r.height/2,rX=((y-cY)/cY)*-10,rY=((x-cX)/cX)*10;c.style.transform=`perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale(1.02)`});c.addEventListener('mouseleave',()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale(1)`})});const cvs=document.getElementById('neural-canvas'),ctx=cvs.getContext('2d');let w,h,pts=[];function rsz(){w=cvs.width=innerWidth,h=cvs.height=innerHeight}window.addEventListener('resize',rsz),rsz();class Pt{constructor(){this.x=Math.random()*w,this.y=Math.random()*h,this.vx=(Math.random()-.5)*.5,this.vy=(Math.random()-.5)*.5,this.s=Math.random()*2+1}up(){this.x+=this.vx,this.y+=this.vy;(this.x<0||this.x>w)&&(this.vx*=-1);(this.y<0||this.y>h)&&(this.vy*=-1)}dr(){ctx.beginPath(),ctx.arc(this.x,this.y,this.s,0,Math.PI*2),ctx.fillStyle='#ffffff',ctx.fill()}}for(let i=0;i<50;i++)pts.push(new Pt);function anim(){ctx.clearRect(0,0,w,h);pts.forEach((p,i)=>{p.up();p.dr();for(let j=i;j<pts.length;j++){const dx=p.x-pts[j].x,dy=p.y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){ctx.beginPath(),ctx.strokeStyle=`rgba(255,255,255,0.1)`,ctx.lineWidth=.5,ctx.moveTo(p.x,p.y),ctx.lineTo(pts[j].x,pts[j].y),ctx.stroke()}}});requestAnimationFrame(anim)}anim();</script>
+</body>
+</html>
