@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>AI Calling | Four Fox</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{sapphire:{DEFAULT:'#233E84',dark:'#0D2767'},bloom:'#DA5D7E',cream:'#FFEFD1',gold:'#D2A588'}}}}</script>
-    <style>body{cursor:none} .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
-        .cursor-dot { width: 8px; height: 8px; background: #DA5D7E; }
-        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(218, 93, 126, 0.5); transition: 0.15s ease-out; }
-        #neural-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:.3}.tilt-card{transform-style:preserve-3d;transform:perspective(1000px)}.tilt-content{transform:translateZ(20px)}.pulse-ring{position:absolute;width:100px;height:100px;border-radius:50%;border:4px solid #DA5D7E;opacity:0;animation:pulse 2s infinite}@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.5);opacity:0}}</style>
+    <style>
+        @media (hover: hover) { body { cursor: none; } .cursor-dot { width: 8px; height: 8px; background: #DA5D7E; position: fixed; border-radius: 50%; z-index: 9999; pointer-events: none; } .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(218, 93, 126, 0.5); position: fixed; border-radius: 50%; z-index: 9999; pointer-events: none; transition: 0.1s ease-out; } }
+        @media (hover: none) { .cursor-dot, .cursor-outline { display: none; } .tilt-card { transform: none !important; } }
+        #neural-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.3; }
+        .tilt-card { transform-style: preserve-3d; transform: perspective(1000px); } .tilt-content { transform: translateZ(20px); }
+        .pulse-ring{position:absolute;width:100px;height:100px;border-radius:50%;border:4px solid #DA5D7E;opacity:0;animation:pulse 2s infinite}@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.5);opacity:0}}
+    </style>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-white">
+<body class="font-sans text-slate-800 antialiased bg-white pb-20 md:pb-0">
     <div class="cursor-dot"></div><div class="cursor-outline"></div><canvas id="neural-canvas"></canvas>
 
-    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 fixed w-full z-50 transition-all duration-300">
+    <nav class="bg-white/95 backdrop-blur-md border-b border-gray-100 fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <a href="index.html" class="flex items-center gap-2 magnetic-btn"><img src="logo.png" alt="Logo" class="h-12 w-auto"></a>
+                <a href="index.html" class="flex items-center gap-2 magnetic-btn"><img src="logo.png" alt="Logo" class="h-10 md:h-12 w-auto"></a>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">Home</a>
                     <a href="about.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">About</a>
@@ -26,17 +30,18 @@
                     <a href="calling.html" class="text-sapphire font-bold border-b-2 border-sapphire magnetic-btn">AI Calling</a>
                     <a href="get-started.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">Get Started</a>
                 </div>
-                <div><a href="get-started.html" class="magnetic-btn bg-bloom hover:bg-bloom-hover text-white px-8 py-3 rounded-lg font-bold transition">Listen Demo</a></div>
+                <div class="hidden md:block"><a href="get-started.html" class="magnetic-btn bg-bloom hover:bg-bloom-hover text-white px-6 py-2.5 rounded-lg font-bold">Listen Demo</a></div>
+                <div class="md:hidden"><button id="mobile-menu-btn" class="text-sapphire p-2"><i class="fas fa-bars text-2xl"></i></button></div>
             </div>
         </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-20 shadow-xl"><div class="px-4 pt-2 pb-6 space-y-2"><a href="index.html" class="block px-3 py-3 text-slate-600">Home</a><a href="about.html" class="block px-3 py-3 text-slate-600">About</a><a href="whatsapp.html" class="block px-3 py-3 text-slate-600">WhatsApp AI</a><a href="calling.html" class="block px-3 py-3 text-sapphire bg-gray-50 rounded-lg">AI Calling</a><a href="get-started.html" class="block px-3 py-3 text-slate-600">Get Started</a></div></div>
     </nav>
 
-    <section class="pt-40 pb-24 bg-cream-light relative">
+    <section class="pt-32 pb-16 bg-cream-light relative">
         <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="inline-block bg-white px-3 py-1 rounded-full text-xs font-bold text-blue-600 mb-6 border border-blue-200 uppercase">Voice AI Technology</div>
                 <h1 class="text-4xl lg:text-6xl font-bold text-sapphire-dark mb-6">AI Calling Receptionist</h1>
-                <p class="text-lg text-slate-600 mb-8">A human-like voice agent that answers calls 24x7, handles FAQs, and books appointments so you never miss a client. Supports natural conversation in Indian languages.</p>
+                <p class="text-lg text-slate-600 mb-8">A human-like voice agent that answers calls 24x7, handles FAQs, and books appointments so you never miss a client.</p>
                 <a href="get-started.html" class="magnetic-btn inline-block bg-bloom hover:bg-bloom-hover text-white px-8 py-4 rounded-lg font-bold shadow-lg">Get Your Number</a>
             </div>
             <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 relative overflow-hidden min-h-[400px] flex flex-col items-center justify-center js-tilt tilt-card">
@@ -49,62 +54,37 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white relative z-10">
+    <section class="py-16 bg-white relative z-10">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-sapphire-dark text-center mb-16">Key Facilities</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-8 border border-gray-100 rounded-2xl js-tilt tilt-card shadow-sm hover:shadow-xl hover:border-blue-500 transition duration-300"><i class="fas fa-language text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-xl mb-2 tilt-content text-sapphire-dark">Multilingual Voice</h3><p class="text-slate-600 text-sm tilt-content mb-4">Answers calls fluently in Hindi, Marathi, and English with a natural accent appropriate for your region.</p></div>
-                <div class="p-8 border border-gray-100 rounded-2xl js-tilt tilt-card shadow-sm hover:shadow-xl hover:border-blue-500 transition duration-300"><i class="fas fa-calendar-check text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-xl mb-2 tilt-content text-sapphire-dark">Voice Booking</h3><p class="text-slate-600 text-sm tilt-content mb-4">Integrates with your Google Calendar or clinic software to book, cancel, or reschedule slots over the phone.</p></div>
-                <div class="p-8 border border-gray-100 rounded-2xl js-tilt tilt-card shadow-sm hover:shadow-xl hover:border-blue-500 transition duration-300"><i class="fas fa-phone-slash text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-xl mb-2 tilt-content text-sapphire-dark">Emergency Routing</h3><p class="text-slate-600 text-sm tilt-content mb-4">Smartly detects urgency keywords (e.g., "emergency", "pain") and instantly forwards the call to a human doctor.</p></div>
-                <div class="p-8 border border-gray-100 rounded-2xl js-tilt tilt-card shadow-sm hover:shadow-xl hover:border-blue-500 transition duration-300"><i class="fab fa-whatsapp text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-xl mb-2 tilt-content text-sapphire-dark">WhatsApp Sync</h3><p class="text-slate-600 text-sm tilt-content mb-4">After the call ends, the AI instantly sends a WhatsApp message to the caller with booking details.</p></div>
-                <div class="p-8 border border-gray-100 rounded-2xl js-tilt tilt-card shadow-sm hover:shadow-xl hover:border-blue-500 transition duration-300"><i class="fas fa-chart-bar text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-xl mb-2 tilt-content text-sapphire-dark">Call Analytics</h3><p class="text-slate-600 text-sm tilt-content mb-4">Provides recordings, transcripts, and summaries of every customer interaction in a dashboard.</p></div>
-                <div class="p-8 border border-gray-100 rounded-2xl js-tilt tilt-card shadow-sm hover:shadow-xl hover:border-blue-500 transition duration-300"><i class="fas fa-question-circle text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-xl mb-2 tilt-content text-sapphire-dark">FAQ Handling</h3><p class="text-slate-600 text-sm tilt-content mb-4">Answers repetitive questions about timings, address, and fees without bothering your staff.</p></div>
+            <h2 class="text-3xl font-bold text-sapphire-dark text-center mb-12">Key Facilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 border rounded-xl js-tilt tilt-card shadow-sm"><i class="fas fa-language text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-lg mb-2 tilt-content">Multilingual</h3><p class="text-sm text-slate-600 tilt-content">Hindi, Marathi, English.</p></div>
+                <div class="p-6 border rounded-xl js-tilt tilt-card shadow-sm"><i class="fas fa-calendar-check text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-lg mb-2 tilt-content">Voice Booking</h3><p class="text-sm text-slate-600 tilt-content">Syncs with Calendar.</p></div>
+                <div class="p-6 border rounded-xl js-tilt tilt-card shadow-sm"><i class="fas fa-phone-slash text-gold text-3xl mb-4 tilt-content"></i><h3 class="font-bold text-lg mb-2 tilt-content">Emergency</h3><p class="text-sm text-slate-600 tilt-content">Detects urgency.</p></div>
             </div>
         </div>
     </section>
 
- <footer class="bg-sapphire-dark text-slate-300 py-16 border-t border-white/10 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
-            <div>
-                <img src="logo.png" alt="Four Fox Logo" class="h-12 mb-4 opacity-90">
-                <p class="text-sm leading-relaxed text-blue-100">
-                    Four Fox Technologies is an AI Systems Engineering Company based in Pune. We build digital machines that run your business on autopilot.
-                </p>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="index.html" class="hover:text-bloom magnetic-btn inline-block">Home</a></li>
-                    <li><a href="about.html" class="hover:text-bloom magnetic-btn inline-block">About Us</a></li>
-                    <li><a href="get-started.html" class="hover:text-bloom magnetic-btn inline-block">Book Audit</a></li>
-                    <li><a href="terms.html" class="hover:text-bloom magnetic-btn inline-block">Terms</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Quick Links</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="whatsapp.html" class="hover:text-bloom magnetic-btn inline-block">WhatsApp AI</a></li>
-                    <li><a href="calling.html" class="hover:text-bloom magnetic-btn inline-block">AI Calling</a></li>
-                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">Websites</a></li>
-                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">RAG Systems</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Contact</h4>
-                <ul class="space-y-4 text-sm">
-                    <li><a href="tel:+919511830971" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-phone text-gold text-lg"></i> +91 95118 30971</a></li>
-                    <li><a href="https://wa.me/918010362102" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fab fa-whatsapp text-gold text-lg"></i> +91 80103 62102</a></li>
-                    <li><a href="mailto:chinmayd1424@gmail.com" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-envelope text-gold text-lg"></i> chinmayd1424@gmail.com</a></li>
-                    <li class="flex gap-3 items-center"><i class="fas fa-map-marker-alt text-gold text-lg"></i> <a href="https://maps.google.com/?q=Four+Fox+Technologies+Pune" target="_blank" class="hover:text-bloom">Pune, Maharashtra, India</a></li>
-                </ul>
-            </div>
+    <footer class="bg-sapphire-dark text-slate-300 py-12 border-t border-white/10 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="col-span-2 md:col-span-1"><img src="logo.png" class="h-10 mb-4 opacity-90"><p class="text-xs">AI Engineering Company based in Pune.</p></div>
+            <div><h4 class="font-bold text-white mb-4 text-xs uppercase">Company</h4><ul class="space-y-2 text-xs"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+            <div><h4 class="font-bold text-white mb-4 text-xs uppercase">Quick Links</h4><ul class="space-y-2 text-xs"><li><a href="whatsapp.html">WhatsApp AI</a></li><li><a href="calling.html">AI Calling</a></li><li><a href="index.html#services">Services</a></li></ul></div>
+            <div class="col-span-2 md:col-span-1"><h4 class="font-bold text-white mb-4 text-xs uppercase">Contact</h4><ul class="space-y-2 text-xs"><li>+91 95118 30971</li><li><a href="https://wa.me/918010362102" class="hover:text-gold">+91 80103 62102 (WA)</a></li><li>chinmayd1424@gmail.com</li><li>Pune, India</li></ul></div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-xs text-slate-500">
-            © 2025 Four Fox Technologies. All rights reserved. <a href="terms.html" class="hover:text-white underline ml-2">Terms & Conditions</a>
-        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-white/10 text-center text-xs">© 2025 Four Fox Technologies.</div>
     </footer>
 
-    <script>const trans=document.getElementById('voice-transcript'),lines=["Namaste! Welcome.","How can I help?","Checking availability...","Slot confirmed!"];let lIdx=0;function playV(){lIdx<lines.length?(trans.textContent=`"${lines[lIdx]}"`,trans.style.opacity=1,lIdx++,setTimeout(playV,2500)):setTimeout(()=>{lIdx=0;playV()},3000)}playV();
-    const cursorDot=document.querySelector('.cursor-dot'),cursorOutline=document.querySelector('.cursor-outline');window.addEventListener("mousemove",e=>{const t=e.clientX,n=e.clientY;cursorDot.style.left=`${t}px`,cursorDot.style.top=`${n}px`,cursorOutline.animate({left:`${t}px`,top:`${n}px`},{duration:500,fill:"forwards"})});document.querySelectorAll('.magnetic-btn').forEach(e=>{e.addEventListener('mousemove',t=>{const n=e.getBoundingClientRect(),o=t.clientX-n.left-n.width/2,r=t.clientY-n.top-n.height/2;e.style.transform=`translate(${o*0.2}px, ${r*0.2}px)`}),e.addEventListener('mouseleave',()=>{e.style.transform='translate(0px, 0px)'})});document.querySelectorAll('.js-tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,cX=r.width/2,cY=r.height/2,rX=((y-cY)/cY)*-10,rY=((x-cX)/cX)*10;c.style.transform=`perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale(1.02)`});c.addEventListener('mouseleave',()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale(1)`})});const cvs=document.getElementById('neural-canvas'),ctx=cvs.getContext('2d');let w,h,pts=[];function rsz(){w=cvs.width=innerWidth,h=cvs.height=innerHeight}window.addEventListener('resize',rsz),rsz();class Pt{constructor(){this.x=Math.random()*w,this.y=Math.random()*h,this.vx=(Math.random()-.5)*.5,this.vy=(Math.random()-.5)*.5,this.s=Math.random()*2+1}up(){this.x+=this.vx,this.y+=this.vy;(this.x<0||this.x>w)&&(this.vx*=-1);(this.y<0||this.y>h)&&(this.vy*=-1)}dr(){ctx.beginPath(),ctx.arc(this.x,this.y,this.s,0,Math.PI*2),ctx.fillStyle='#233E84',ctx.fill()}}for(let i=0;i<50;i++)pts.push(new Pt);function anim(){ctx.clearRect(0,0,w,h);pts.forEach((p,i)=>{p.up();p.dr();for(let j=i;j<pts.length;j++){const dx=p.x-pts[j].x,dy=p.y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){ctx.beginPath(),ctx.strokeStyle=`rgba(35,62,132,${1-d/150})`,ctx.lineWidth=.5,ctx.moveTo(p.x,p.y),ctx.lineTo(pts[j].x,pts[j].y),ctx.stroke()}}});requestAnimationFrame(anim)}anim();</script>
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex shadow-lg">
+        <a href="tel:+919511830971" class="flex-1 py-3 text-center text-sapphire font-bold border-r border-gray-200"><i class="fas fa-phone-alt"></i> Call</a>
+        <a href="https://wa.me/918010362102" class="flex-1 py-3 text-center text-white font-bold bg-green-500"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <script>
+        const trans=document.getElementById('voice-transcript'),lines=["Namaste! Welcome.","How can I help?","Checking availability...","Slot confirmed!"];let lIdx=0;function playV(){lIdx<lines.length?(trans.textContent=`"${lines[lIdx]}"`,trans.style.opacity=1,lIdx++,setTimeout(playV,2500)):setTimeout(()=>{lIdx=0;playV()},3000)}playV();
+        const menuBtn=document.getElementById('mobile-menu-btn'),mobileMenu=document.getElementById('mobile-menu');menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden')});
+        if(window.matchMedia("(hover: hover)").matches){const d=document.querySelector('.cursor-dot'),o=document.querySelector('.cursor-outline');window.addEventListener("mousemove",e=>{d.style.left=`${e.clientX}px`,d.style.top=`${e.clientY}px`,o.animate({left:`${e.clientX}px`,top:`${e.clientY}px`},{duration:500,fill:"forwards"})});document.querySelectorAll('.magnetic-btn').forEach(e=>{e.addEventListener('mousemove',t=>{const n=e.getBoundingClientRect(),x=t.clientX-n.left-n.width/2,y=t.clientY-n.top-n.height/2;e.style.transform=`translate(${x*0.2}px,${y*0.2}px)`}),e.addEventListener('mouseleave',()=>{e.style.transform='translate(0,0)'})});document.querySelectorAll('.js-tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=((e.clientY-r.top)/r.height)*-10,y=((e.clientX-r.left)/r.width)*10;c.style.transform=`perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(1.02)`});c.addEventListener('mouseleave',()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale(1)`})})}
+        const cvs=document.getElementById('neural-canvas'),ctx=cvs.getContext('2d');let w,h,pts=[];function rsz(){w=cvs.width=innerWidth,h=cvs.height=innerHeight}window.addEventListener('resize',rsz),rsz();class Pt{constructor(){this.x=Math.random()*w,this.y=Math.random()*h,this.vx=(Math.random()-.5)*.5,this.vy=(Math.random()-.5)*.5,this.s=Math.random()*2+1}up(){this.x+=this.vx,this.y+=this.vy;(this.x<0||this.x>w)&&(this.vx*=-1);(this.y<0||this.y>h)&&(this.vy*=-1)}dr(){ctx.beginPath(),ctx.arc(this.x,this.y,this.s,0,Math.PI*2),ctx.fillStyle='#233E84',ctx.fill()}}for(let i=0;i<40;i++)pts.push(new Pt);function anim(){ctx.clearRect(0,0,w,h);pts.forEach((p,i)=>{p.up();p.dr();for(let j=i;j<pts.length;j++){const dx=p.x-pts[j].x,dy=p.y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.beginPath(),ctx.strokeStyle=`rgba(35,62,132,${1-d/100})`,ctx.lineWidth=.5,ctx.moveTo(p.x,p.y),ctx.lineTo(pts[j].x,pts[j].y),ctx.stroke()}}});requestAnimationFrame(anim)}anim();
+    </script>
 </body>
 </html>
