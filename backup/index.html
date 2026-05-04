@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Four Fox Technologies | Best AI Business Automation Agency in Pune</title>
+    <meta name="description" content="Automate your business with Four Fox Technologies. We build WhatsApp AI Chatbots, AI Calling Agents, and RAG Systems for MSMEs in Pune, India & UK.">
+    <meta name="keywords" content="AI Automation Pune, WhatsApp Bot for Clinics, AI Calling Agent India, RAG System Developer, Python Automation Services">
+    <link rel="canonical" href="https://fourfox.tech/">
+    
+    <meta property="og:title" content="Four Fox Technologies | Automate Your Business">
+    <meta property="og:description" content="Increase profit and reduce work with 24/7 AI staff. Serving India & UK.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Four Fox Technologies",
+      "image": "logo.png",
+      "description": "AI Systems Engineering Company specializing in WhatsApp Automation, Voice AI, and RAG Systems.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+      "telephone": "+919511830971",
+      "priceRange": "$$",
+      "areaServed": ["IN", "GB"],
+      "sameAs": ["https://wa.me/918010362102"]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        sapphire: { DEFAULT: '#233E84', dark: '#0D2767', light: '#EAEFF8' },
+                        bloom: { DEFAULT: '#DA5D7E', hover: '#C44D6D', light: '#FBE5EB' },
+                        cream: { DEFAULT: '#FFEFD1', light: '#FFFAEF' },
+                        gold: { DEFAULT: '#D2A588' }
+                    },
+                    screens: { 'xs': '475px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Desktop Cursor Only */
+        @media (hover: hover) {
+            body { cursor: none; }
+            .cursor-dot { width: 8px; height: 8px; background: #DA5D7E; position: fixed; border-radius: 50%; z-index: 9999; pointer-events: none; }
+            .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(218, 93, 126, 0.5); position: fixed; border-radius: 50%; z-index: 9999; pointer-events: none; transition: 0.1s ease-out; }
+        }
+        @media (hover: none) {
+            .cursor-dot, .cursor-outline { display: none; }
+            .tilt-card { transform: none !important; } /* Disable tilt on mobile for performance */
+        }
+        #neural-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4; pointer-events: none; }
+        .tilt-card { transform-style: preserve-3d; transform: perspective(1000px); }
+        .tilt-content { transform: translateZ(20px); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Mobile Sticky Bar */
+        .mobile-sticky-bar { box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white selection:bg-bloom selection:text-white pb-20 md:pb-0">
+
+    <div class="cursor-dot"></div><div class="cursor-outline"></div><canvas id="neural-canvas"></canvas>
+
+    <nav class="bg-white/95 backdrop-blur-md border-b border-gray-100 fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 magnetic-btn z-50">
+                    <img src="logo.png" alt="Four Fox Technologies Logo" class="h-10 md:h-12 w-auto object-contain">
+                </a>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sapphire font-bold border-b-2 border-sapphire magnetic-btn">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">About</a>
+                    <a href="whatsapp.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">WhatsApp AI</a>
+                    <a href="calling.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">AI Calling</a>
+                    <a href="get-started.html" class="text-slate-600 hover:text-bloom font-medium transition magnetic-btn">Get Started</a>
+                </div>
+                
+                <div class="hidden md:block z-50">
+                    <a href="get-started.html" class="magnetic-btn bg-bloom hover:bg-bloom-hover text-white px-6 py-2.5 rounded-lg font-bold transition shadow-lg shadow-bloom/30">Book Audit</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-sapphire focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-20 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-sapphire font-bold bg-gray-50 rounded-lg">Home</a>
+                <a href="about.html" class="block px-3 py-3 text-slate-600 hover:text-bloom font-medium">About Us</a>
+                <a href="whatsapp.html" class="block px-3 py-3 text-slate-600 hover:text-bloom font-medium">WhatsApp AI</a>
+                <a href="calling.html" class="block px-3 py-3 text-slate-600 hover:text-bloom font-medium">AI Calling</a>
+                <a href="get-started.html" class="block px-3 py-3 text-slate-600 hover:text-bloom font-medium">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-16 md:pt-44 md:pb-24 min-h-[90vh] flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="reveal text-center lg:text-left">
+                    <div class="inline-block bg-white/80 backdrop-blur px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-bold text-sapphire-dark mb-4 md:mb-6 border border-gold/50 shadow-sm uppercase tracking-wider">
+                        <i class="fas fa-robot text-bloom mr-2"></i> AI Business Automation
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-sapphire-dark mb-4 md:mb-6 leading-tight">
+                        Automate Business. <br><span class="text-bloom">Increase Profit.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-8 md:mb-10 font-light leading-relaxed">
+                        We engineer digital business machines for <strong>Indian MSMEs & UK Enterprises</strong>. From 24×7 WhatsApp Agents to Private RAG Knowledge Bots, we run your sales on autopilot.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="get-started.html" class="magnetic-btn flex justify-center items-center bg-bloom hover:bg-bloom-hover text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transition">Start Automation</a>
+                        <a href="#services" class="magnetic-btn flex justify-center items-center bg-white border-2 border-sapphire text-sapphire hover:bg-sapphire hover:text-white px-8 py-4 rounded-xl font-bold transition">View 13 Services</a>
+                    </div>
+                </div>
+                
+                <div class="relative reveal delay-200 mt-8 lg:mt-0">
+                    <div class="bg-sapphire-dark rounded-3xl shadow-2xl p-6 md:p-10 relative z-10 border border-white/10 text-white js-tilt tilt-card cursor-default">
+                        <h3 class="text-gold font-bold uppercase tracking-widest text-xs md:text-sm mb-6 border-b border-white/10 pb-4 tilt-content">Why Four Fox?</h3>
+                        <div class="space-y-6 tilt-content">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 text-bloom"><i class="fas fa-wallet"></i></div>
+                                <div><h4 class="font-bold text-lg">Affordable Enterprise AI</h4><p class="text-xs md:text-sm text-blue-100">One-time setup. Lifetime benefit.</p></div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 text-bloom"><i class="fas fa-map-marker-alt"></i></div>
+                                <div><h4 class="font-bold text-lg">Local Pune Support</h4><p class="text-xs md:text-sm text-blue-100">Custom engineering for Indian needs.</p></div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 text-bloom"><i class="fas fa-cogs"></i></div>
+                                <div><h4 class="font-bold text-lg">No Tech Knowledge</h4><p class="text-xs md:text-sm text-blue-100">We build & manage. You profit.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-slate-50 border-y border-gray-200 relative z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-2xl md:text-4xl font-bold text-sapphire-dark">The Cost of Inaction</h2>
+                <p class="text-slate-600 mt-2 text-sm md:text-base">Why manual businesses are losing to automated competitors.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-50/50 p-6 md:p-8 rounded-2xl border border-red-100 js-tilt tilt-card">
+                    <h3 class="text-red-600 font-bold text-lg md:text-xl mb-4 tilt-content"><i class="fas fa-times-circle mr-2"></i> The Manual Trap</h3>
+                    <ul class="space-y-3 text-sm md:text-base text-slate-700 tilt-content">
+                        <li class="flex gap-3"><i class="fas fa-minus text-red-400 mt-1"></i> Missed calls after 6 PM = Lost Revenue.</li>
+                        <li class="flex gap-3"><i class="fas fa-minus text-red-400 mt-1"></i> Slow replies lose customers to competitors.</li>
+                        <li class="flex gap-3"><i class="fas fa-minus text-red-400 mt-1"></i> Manual data entry wastes 20+ hours/week.</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50/50 p-6 md:p-8 rounded-2xl border border-green-100 js-tilt tilt-card">
+                    <h3 class="text-green-600 font-bold text-lg md:text-xl mb-4 tilt-content"><i class="fas fa-check-circle mr-2"></i> The Automated Future</h3>
+                    <ul class="space-y-3 text-sm md:text-base text-slate-700 tilt-content">
+                        <li class="flex gap-3"><i class="fas fa-check text-green-500 mt-1"></i> 24/7 AI Agents capture every lead instantly.</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Instant WhatsApp replies in < 2 seconds.</li>
+                        <li class="flex gap-3"><i class="fas fa-check text-green-500 mt-1"></i> Zero manual entry; auto-sync to CRM.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-cream-light relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="text-bloom font-bold uppercase tracking-widest text-xs">Full Catalog</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-sapphire-dark mt-2 mb-4">Complete Digital Business Machines</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-lg">We don't sell software. We engineer systems.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-sapphire/10 text-sapphire rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-laptop-code"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">1. Conversion Websites</h3><p class="text-sm text-slate-600 mb-4 tilt-content">High-performance SEO landing sites designed to convert visitors into booked customers.</p><ul class="text-xs text-slate-500 space-y-1 border-t border-gray-100 pt-3 tilt-content"><li>• WhatsApp & Call Buttons</li><li>• Mobile-First Speed</li></ul></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fab fa-whatsapp"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">2. WhatsApp AI Agent</h3><p class="text-sm text-slate-600 mb-4 tilt-content">24×7 digital receptionist that handles leads, FAQs, and bookings instantly.</p><ul class="text-xs text-slate-500 space-y-1 border-t border-gray-100 pt-3 tilt-content"><li>• Marathi / Hindi / English</li><li>• Auto Lead Capture</li></ul></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-phone-alt"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">3. AI Calling Agent</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Human-like AI phone receptionist that answers calls and books appointments.</p><ul class="text-xs text-slate-500 space-y-1 border-t border-gray-100 pt-3 tilt-content"><li>• Multilingual Voice</li><li>• Emergency Routing</li></ul></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-2 border-gold/30 js-tilt tilt-card reveal relative overflow-hidden"><div class="absolute top-0 right-0 bg-gold text-white text-[10px] font-bold px-2 py-1 tilt-content">PREMIUM</div><div class="w-12 h-12 bg-gold/10 text-gold rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-brain"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">4. RAG AI Systems</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Private AI assistants trained on your internal company data (PDFs, SOPs).</p><ul class="text-xs text-slate-500 space-y-1 border-t border-gray-100 pt-3 tilt-content"><li>• Staff Training Bots</li><li>• Secure Data Hosting</li></ul></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-robot"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">5. Custom AI Agents</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Autonomous agents that execute complex workflows and integrate with CRM.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-calendar-check"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">6. Appt. Automation</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Self-service booking portals synced with WhatsApp. Eliminates scheduling conflicts.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-map-marked-alt"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">7. GBP Optimization</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Dominate "Near Me" searches. Profile setup and review automation.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-envelope-open-text"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">8. Marketing Auto.</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Smart broadcasting systems for Email & WhatsApp. Festival & offer campaigns.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-mobile-alt"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">9. Mobile App Dev</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Native Android & iOS apps with booking and CRM integration.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-gray-100 text-gray-700 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fab fa-python"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">10. Python Automation</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Scripts to scrape data and automate boring manual tasks.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-chart-network"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">11. AI/ML Models</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Sales forecasting, fraud detection, and recommendation engines.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition"><div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-eye"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">12. Computer Vision</h3><p class="text-sm text-slate-600 mb-4 tilt-content">Face detection for attendance and smart CCTV analytics.</p></div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 js-tilt tilt-card reveal hover:shadow-xl transition md:col-span-2 lg:col-span-3 lg:w-1/3 lg:mx-auto"><div class="w-12 h-12 bg-blue-100 text-blue-800 rounded-lg flex items-center justify-center text-xl mb-4 tilt-content"><i class="fas fa-chart-pie"></i></div><h3 class="font-bold text-lg text-sapphire-dark mb-2 tilt-content">13. Business Analytics</h3><p class="text-sm text-slate-600 mb-4 tilt-content">KPI dashboards and data visualization.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-sapphire-dark text-slate-300 py-12 md:py-16 border-t border-white/10 relative z-10 pb-24 md:pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div class="col-span-2 md:col-span-1">
+                <img src="logo.png" alt="Four Fox Logo" class="h-10 mb-4 opacity-90">
+                <p class="text-xs md:text-sm leading-relaxed text-blue-100">AI Systems Engineering Company based in Pune.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Company</h4>
+                <ul class="space-y-2 text-xs md:text-sm">
+                    <li><a href="index.html" class="hover:text-bloom magnetic-btn inline-block">Home</a></li>
+                    <li><a href="about.html" class="hover:text-bloom magnetic-btn inline-block">About Us</a></li>
+                    <li><a href="terms.html" class="hover:text-bloom magnetic-btn inline-block">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Quick Links</h4>
+                <ul class="space-y-2 text-xs md:text-sm">
+                    <li><a href="whatsapp.html" class="hover:text-bloom magnetic-btn inline-block">WhatsApp AI</a></li>
+                    <li><a href="calling.html" class="hover:text-bloom magnetic-btn inline-block">AI Calling</a></li>
+                    <li><a href="get-started.html" class="hover:text-bloom magnetic-btn inline-block">Book Audit</a></li>
+                </ul>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Contact</h4>
+                <ul class="space-y-3 text-xs md:text-sm">
+                    <li><a href="tel:+919511830971" class="flex gap-2 hover:text-bloom items-center"><i class="fas fa-phone text-gold"></i> +91 95118 30971</a></li>
+                    <li><a href="https://wa.me/918010362102" class="flex gap-2 hover:text-bloom items-center"><i class="fab fa-whatsapp text-gold"></i> +91 80103 62102</a></li>
+                    <li><a href="mailto:chinmayd1424@gmail.com" class="flex gap-2 hover:text-bloom items-center"><i class="fas fa-envelope text-gold"></i> chinmayd1424...</a></li>
+                    <li class="flex gap-2 items-center"><i class="fas fa-map-marker-alt text-gold"></i> <a href="http://maps.google.com/?q=Pune,Maharashtra" target="_blank" class="hover:text-bloom">Pune, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-white/10 text-center text-xs text-slate-500">
+            © 2025 Four Fox Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <a href="tel:+919511830971" class="flex-1 py-3 text-center text-sapphire font-bold border-r border-gray-200 flex items-center justify-center gap-2 active:bg-gray-50">
+            <i class="fas fa-phone-alt"></i> Call
+        </a>
+        <a href="https://wa.me/918010362102" class="flex-1 py-3 text-center text-white font-bold bg-green-500 flex items-center justify-center gap-2 active:bg-green-600">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Interactions (Desktop Only)
+        if (window.matchMedia("(hover: hover)").matches) {
+            const cursorDot=document.querySelector('.cursor-dot'),cursorOutline=document.querySelector('.cursor-outline');window.addEventListener("mousemove",e=>{const t=e.clientX,n=e.clientY;cursorDot.style.left=`${t}px`,cursorDot.style.top=`${n}px`,cursorOutline.animate({left:`${t}px`,top:`${n}px`},{duration:500,fill:"forwards"})});
+            document.querySelectorAll('.magnetic-btn').forEach(e=>{e.addEventListener('mousemove',t=>{const n=e.getBoundingClientRect(),o=t.clientX-n.left-n.width/2,r=t.clientY-n.top-n.height/2;e.style.transform=`translate(${o*0.2}px, ${r*0.2}px)`}),e.addEventListener('mouseleave',()=>{e.style.transform='translate(0px, 0px)'})});
+            document.querySelectorAll('.js-tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,cX=r.width/2,cY=r.height/2,rX=((y-cY)/cY)*-10,rY=((x-cX)/cX)*10;c.style.transform=`perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale(1.02)`});c.addEventListener('mouseleave',()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale(1)`})});
+        }
+
+        // Scroll Reveal
+        const observer=new IntersectionObserver(e=>{e.forEach(t=>{if(t.isIntersecting)t.target.classList.add('active')})},{threshold:0.1});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+        
+        // Canvas (Simplified)
+        const cvs=document.getElementById('neural-canvas'),ctx=cvs.getContext('2d');let w,h,pts=[];function rsz(){w=cvs.width=innerWidth,h=cvs.height=innerHeight}window.addEventListener('resize',rsz),rsz();class Pt{constructor(){this.x=Math.random()*w,this.y=Math.random()*h,this.vx=(Math.random()-.5)*.5,this.vy=(Math.random()-.5)*.5,this.s=Math.random()*2+1}up(){this.x+=this.vx,this.y+=this.vy;(this.x<0||this.x>w)&&(this.vx*=-1);(this.y<0||this.y>h)&&(this.vy*=-1)}dr(){ctx.beginPath(),ctx.arc(this.x,this.y,this.s,0,Math.PI*2),ctx.fillStyle='#233E84',ctx.fill()}}for(let i=0;i<40;i++)pts.push(new Pt);function anim(){ctx.clearRect(0,0,w,h);pts.forEach((p,i)=>{p.up();p.dr();for(let j=i;j<pts.length;j++){const dx=p.x-pts[j].x,dy=p.y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.beginPath(),ctx.strokeStyle=`rgba(35,62,132,${1-d/100})`,ctx.lineWidth=.5,ctx.moveTo(p.x,p.y),ctx.lineTo(pts[j].x,pts[j].y),ctx.stroke()}}});requestAnimationFrame(anim)}anim();
+    </script>
+</body>
+</html>

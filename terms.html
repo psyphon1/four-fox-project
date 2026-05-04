@@ -1,85 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Terms | Four Fox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Terms & Conditions | Four Fox Technologies</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{sapphire:{DEFAULT:'#233E84',dark:'#0D2767'},bloom:'#DA5D7E',cream:'#FFEFD1',gold:'#D2A588'}}}}</script>
-    <style>body{cursor:none} .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
-        .cursor-dot { width: 8px; height: 8px; background: #DA5D7E; }
-        .cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(218, 93, 126, 0.5); transition: 0.15s ease-out; }
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        midnight: '#020617',
+                        bloom: '#DA5D7E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #020617; color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .logo-enhance { 
+            background: white; 
+            padding: 6px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+    </style>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-white">
-    <div class="cursor-dot"></div><div class="cursor-outline"></div>
-    <nav class="bg-white border-b border-gray-100 fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <a href="index.html" class="flex items-center gap-2"><img src="logo.png" class="h-12 w-auto"></a>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-slate-600 hover:text-bloom font-medium transition">Home</a>
-                    <a href="get-started.html" class="bg-bloom hover:bg-bloom-hover text-white px-6 py-2 rounded-lg font-bold">Contact</a>
-                </div>
-            </div>
+<body class="selection:bg-bloom selection:text-white">
+    <nav class="fixed top-0 w-full z-50 bg-midnight/80 backdrop-blur-xl border-b border-white/5 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="h-10 logo-enhance">
+                <span class="font-display font-bold text-xl tracking-tight">FOUR FOX <span class="text-bloom">TECH</span></span>
+            </a>
+            <a href="index.html" class="text-sm font-medium hover:text-bloom transition">Back to Home</a>
         </div>
     </nav>
 
-    <div class="pt-32 pb-20 max-w-4xl mx-auto px-4">
-        <h1 class="text-4xl font-bold text-sapphire-dark mb-6">Terms and Conditions</h1>
-        <p class="text-slate-500 mb-10">Last updated: December 28, 2025</p>
-        <div class="prose prose-slate max-w-none">
-            <h3 class="text-xl font-bold text-sapphire mb-4">1. Introduction</h3>
-            <p class="mb-6">Welcome to Four Fox Technologies. These Terms and Conditions govern your use of our website and services.</p>
-            <h3 class="text-xl font-bold text-sapphire mb-4">2. Services</h3>
-            <p class="mb-6">Four Fox Technologies provides AI business automation services subject to a separate service agreement signed upon commencement of a project.</p>
-            <h3 class="text-xl font-bold text-sapphire mb-4">3. Contact Us</h3>
-            <p class="mb-6">Questions? Contact <a href="mailto:chinmayd1424@gmail.com" class="text-bloom hover:underline">chinmayd1424@gmail.com</a>.</p>
-        </div>
-    </div>
+    <section class="pt-40 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="font-display text-4xl lg:text-5xl font-extrabold mb-4">Terms of <span class="text-bloom">Service.</span></h1>
+            <p class="text-slate-500 mb-16 uppercase tracking-widest text-xs font-bold">Last Updated: May 2026</p>
+            
+            <div class="space-y-12 text-slate-400 leading-relaxed">
+                <div class="glass p-8 rounded-3xl border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-4">1. Agreement to Terms</h3>
+                    <p>By accessing or using the Four Fox Technologies website, you agree to be bound by these Terms and Conditions and all applicable laws and regulations.</p>
+                </div>
 
-    <footer class="bg-sapphire-dark text-slate-300 py-16 border-t border-white/10 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
-            <div>
-                <img src="logo.png" alt="Four Fox Logo" class="h-12 mb-4 opacity-90">
-                <p class="text-sm leading-relaxed text-blue-100">
-                    Four Fox Technologies is an AI Systems Engineering Company based in Pune. We build digital machines that run your business on autopilot.
-                </p>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="index.html" class="hover:text-bloom magnetic-btn inline-block">Home</a></li>
-                    <li><a href="about.html" class="hover:text-bloom magnetic-btn inline-block">About Us</a></li>
-                    <li><a href="get-started.html" class="hover:text-bloom magnetic-btn inline-block">Book Audit</a></li>
-                    <li><a href="terms.html" class="hover:text-bloom magnetic-btn inline-block">Terms</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Quick Links</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="whatsapp.html" class="hover:text-bloom magnetic-btn inline-block">WhatsApp AI</a></li>
-                    <li><a href="calling.html" class="hover:text-bloom magnetic-btn inline-block">AI Calling</a></li>
-                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">Websites</a></li>
-                    <li><a href="index.html#services" class="hover:text-bloom magnetic-btn inline-block">RAG Systems</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Contact</h4>
-                <ul class="space-y-4 text-sm">
-                    <li><a href="tel:+919511830971" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-phone text-gold text-lg"></i> +91 95118 30971</a></li>
-                    <li><a href="https://wa.me/918010362102" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fab fa-whatsapp text-gold text-lg"></i> +91 80103 62102</a></li>
-                    <li><a href="mailto:chinmayd1424@gmail.com" class="flex gap-3 hover:text-bloom items-center magnetic-btn"><i class="fas fa-envelope text-gold text-lg"></i> chinmayd1424@gmail.com</a></li>
-                    <li class="flex gap-3 items-center"><i class="fas fa-map-marker-alt text-gold text-lg"></i> <a href="https://maps.google.com/?q=Four+Fox+Technologies+Pune" target="_blank" class="hover:text-bloom">Pune, Maharashtra, India</a></li>
-                </ul>
+                <div class="glass p-8 rounded-3xl border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-4">2. AI Services & Automation</h3>
+                    <p>Four Fox Technologies provides custom AI systems engineering, including but not limited to WhatsApp Agents, Voice Agents, and RAG architectures. All services are subject to separate service level agreements signed upon project commencement.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-4">3. Data Privacy</h3>
+                    <p>We prioritize the security of your business intelligence. Any data processed by our custom-engineered agents is handled according to our strict internal security protocols and your specific deployment requirements.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-4">4. Intellectual Property</h3>
+                    <p>The core technology and software developed by Four Fox Technologies remain the intellectual property of the company unless explicitly stated otherwise in a signed project contract.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border border-white/5">
+                    <h3 class="text-xl font-bold text-white mb-4">5. Contact Information</h3>
+                    <p>For any legal inquiries or questions regarding these terms, please contact us at <a href="mailto:fourfoxtech.ai@gmail.com" class="text-bloom hover:underline">fourfoxtech.ai@gmail.com</a>.</p>
+                </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-xs text-slate-500">
-            © 2025 Four Fox Technologies. All rights reserved. <a href="terms.html" class="hover:text-white underline ml-2">Terms & Conditions</a>
-        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-600 text-xs">
+        <p>© 2025 Four Fox Technologies. All Rights Reserved.</p>
     </footer>
-
-    <script>const cursorDot=document.querySelector('.cursor-dot'),cursorOutline=document.querySelector('.cursor-outline');window.addEventListener("mousemove",e=>{const t=e.clientX,n=e.clientY;cursorDot.style.left=`${t}px`,cursorDot.style.top=`${n}px`,cursorOutline.animate({left:`${t}px`,top:`${n}px`},{duration:500,fill:"forwards"})});</script>
 </body>
 </html>
